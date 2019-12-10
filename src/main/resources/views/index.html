@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!--Title-->
+    <title>First Micronaut App with Thymeleaf</title>
+</head>
+
+<tbody>
+    <!--Headlines-->
+    <h1>First Micronaut App with Thymeleaf</h1>
+    <h3>List of persons:</h3>
+
+    <!--Display the list-->
+    <ul>
+        <div th:if="${persons.empty}">
+            <td> No Persons Available </td>
+        </div>
+        <div th:unless="${persons.empty}">
+            <th:block th:each="person : ${persons}">
+                <li>
+                    <span th:text="${person.name}"> name </span>
+                </li>
+            </th:block>
+        </div>
+    </ul>
+</tbody>
+
+</html>

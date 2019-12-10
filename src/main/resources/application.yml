@@ -1,0 +1,15 @@
+micronaut:
+  application:
+    name: micronaut-first-thymeleaf-app
+  views:
+    #thymeleaf properties (thymeleaf is enabled by default; just to make sure)
+    thymeleaf:
+      enabled: true
+  router:
+    static-resources:
+      main:
+        enabled: true
+        paths: "classpath:views"
+        #bind views folder to main path
+        mapping: "/main/**"
+
